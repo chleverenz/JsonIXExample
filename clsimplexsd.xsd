@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="clsimplexsd"
+                  targetNamespace="http://www.leverenz.biz/clsimplexsd.xsd"
+                  elementFormDefault="qualified"
+                  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:annotation>
+		<xs:appinfo>This Document contains the specification of a xml setup</xs:appinfo>
+	</xs:annotation>
+	<xs:element name="myroot">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="anentry" minOccurs="1" maxOccurs="unbounded">
+					<xs:complexType>
+            <xs:all>
+              <xs:element name="astring" type="xs:string" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:appinfo>a string used in setup</xs:appinfo>
+                  <xs:documentation>a string used in setup</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="anumber" type="xs:integer" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:appinfo>an integer</xs:appinfo>
+                  <xs:documentation>an integer</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:all>
+						<xs:attribute name="name" type="xs:string">
+							<xs:annotation>
+								<xs:appinfo>a string as an attribute</xs:appinfo>
+								<xs:documentation>a string as an attribute</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="useme" type="xs:boolean" default="1">
+							<xs:annotation>
+								<xs:appinfo>a boolean as an attribute</xs:appinfo>
+								<xs:documentation>a boolean as an attribute</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="maxcount" type="xs:integer" default="20">
+							<xs:annotation>
+								<xs:appinfo>an integer as an attribute</xs:appinfo>
+								<xs:documentation>an integer as an attribute</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="defaultentry" type="xs:string"></xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

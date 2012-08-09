@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<myroot xmlns="http://www.leverenz.biz/clsimplexsd.xsd" defaultentry="sally">
+  <anentry maxcount="42" name="harry" useme="true">
+    <anumber>42</anumber>
+    <astring>tell me more</astring>
+  </anentry>
+  <anentry name="sally">
+    <anumber>21</anumber>
+    <astring>half the truth</astring>
+  </anentry>
+</myroot>
