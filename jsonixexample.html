@@ -42,16 +42,17 @@
 	            function (data) { // call, when the xml could be unmarshaled from the data specified by the url
 	                if (data.value) { // vthe node value will contain the true data
 	                    biz.leverenz.jsonixexample.data.xmldata = data.value; // just remember the data...
-                    }
-	                var targetelement = document.getElementById("mydata"); // some debugoutput from the read data
-	                for (var i = 0 ; i < data.value.anentry.length ; i++) { // anentry occours as an array due to the xsd definition
-	                    var theentry = data.value.anentry[i];
-	                    var thenumber = theentry.anumber; // the subnode anumber becomes directly a member of anentry, because it has no attributes
-	                    var thename = theentry.name; // the attribute name of anentry becomes also a member of this entry
-	                    var anewchild = document.createElement("div"); // ok, just display them in asimple div for demo
-	                    anewchild.innerText = thename + " - " + thenumber;
-	                    targetelement.appendChild(anewchild);
-                    }
+	                    var targetelement = document.getElementById("mydata"); // some debugoutput from the read data
+	                    for (var i = 0 ; i < data.value.anentry.length ; i++) { // anentry occours as an array due to the xsd definition
+	                        var theentry = data.value.anentry[i];
+	                        var thenumber = theentry.anumber; // the subnode anumber becomes directly a member of anentry, because it has no attributes
+	                        var thename = theentry.name; // the attribute name of anentry becomes also a member of this entry
+	                        var thestring = theentry.astring; // the subnode astring
+	                        var anewchild = document.createElement("div"); // ok, just display them in asimple div for demo
+	                        anewchild.innerText = thename + " - " + thenumber + " - " + thestring;
+	                        targetelement.appendChild(anewchild);
+                            }
+                        }
 	            });
         }
 
